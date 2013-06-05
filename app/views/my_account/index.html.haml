@@ -1,3 +1,6 @@
+.page-header
+  %h1 My account
+
 .row
   .span3
     %b Name:
@@ -8,3 +11,20 @@
   .span3
     %b Email:
     = @user.email
+
+%h2 My week
+.row
+  .span9
+
+    %table.table.table-striped
+      %thead
+        %tr
+          %td &nbsp;
+          - @weekdays.each do |day|
+            %th= day
+      %tbody
+        - (10..22).each do |hour|
+          %tr
+            %th= hour
+            - @weekdays.each do |day|
+              %td= best_in_place @user, "#{day}_#{hour}".to_sym, type: :checkbox, collection: ['<i class="icon-circle-blank"></i>'.html_safe, '<i class="icon-ok"></i>'.html_safe]
