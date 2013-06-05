@@ -1,4 +1,6 @@
 Padel::Application.routes.draw do
+  resources :users, only: [:update]
+
   devise_for :users
 
   root to: 'my_account#index'

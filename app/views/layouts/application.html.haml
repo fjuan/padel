@@ -25,8 +25,11 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="#") Padel
+          %a.brand(href="/") Padel
           .container.nav-collapse
+            - if user_signed_in?
+              %ul.nav.pull-right
+                %li= link_to t('devise.links.sign_out'), destroy_user_session_path, :method => :delete
             %ul.nav
               %li= link_to "My account", "/"
 
@@ -34,7 +37,9 @@
 
       = bootstrap_flash
       = yield
-    
+      
+      %br
+      
       %footer
         %p
           Powered by

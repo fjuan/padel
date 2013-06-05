@@ -1,0 +1,12 @@
+= debug @user
+
+.row
+  .span3
+    %b Name:
+    = best_in_place @user, :name,  input: :input, ok_button: t('save'), cancel_button: t('cancel')
+  .span3
+    %b Phone:
+    = best_in_place @user, :phone, input: :input, ok_button: t('save'), cancel_button: t('cancel')
+  .span3
+    %b Email:
+    = @user.email
