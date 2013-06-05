@@ -1,9 +1,13 @@
 Padel::Application.routes.draw do
+  resource :calendar, only: [:show]
+
+  resource :my_account, only: [:show]
+  
   resources :users, only: [:update]
 
   devise_for :users
 
-  root to: 'my_account#index'
+  root to: 'my_accounts#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

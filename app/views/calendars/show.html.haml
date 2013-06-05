@@ -1,0 +1,32 @@
+.page-header
+  %h1 Calendar
+
+%table.table.table-striped
+  %thead
+    %tr
+      %td &nbsp;
+      - @weekdays.each do |day|
+        %th= day
+  %tbody
+    - (10..22).each do |hour|
+      %tr
+        %th= hour
+        - @weekdays.each do |day|
+          %td
+            - @users_by_availability["#{day}_#{hour}"].each do |user|
+              %i{:class => "icon-user", :title => user.name}
+
+            - if @users_by_availability["#{day}_#{hour}"].count > 0
+              .modal.hide.fade.in{:style => "display: none; ", :id => "#{day}_#{hour}"}
+                .modal-header
+                  %a.close{"data-dismiss" => "modal"} ×
+                  %h3= "#{day} at #{hour}"
+                .modal-body
+                  %p= @users_by_availability["#{day}_#{hour}"].collect(&:name).to_sentence
+                .modal-footer
+                  %a.btn.btn-success{:href => "#"} Let's play
+                  %a.btn{"data-dismiss" => "modal", :href => "#"} Close
+               
+              
+              %a{"data-toggle" => "modal", :href => "##{day}_#{hour}"} 
+                %i{:class => "icon-plus"}

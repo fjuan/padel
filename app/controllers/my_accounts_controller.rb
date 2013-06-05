@@ -1,6 +1,6 @@
-class MyAccountController < ApplicationController
+class MyAccountsController < ApplicationController
 
-  def index
+  def show
     @user = current_user
     @weekdays = %w(monday tuesday wednesday thursday friday saturday sunday)
 

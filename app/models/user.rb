@@ -16,6 +16,20 @@ class User < ActiveRecord::Base
     end
   end
 
+
+  def self.by_availability
+    @by_availability ||= {}
+
+    weekdays = %w(monday tuesday wednesday thursday friday saturday sunday)
+    (10..22).each do |hour|
+      weekdays.each do |day|
+        @by_availability["#{day}_#{hour}"] = self.where("#{day}_#{hour}" => true)
+      end
+    end
+
+    return @by_availability
+  end
+
   def has_name_and_phone?
     name.present? && phone.present?
   end
