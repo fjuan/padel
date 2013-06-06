@@ -19,4 +19,3 @@ public/uploads
 
 # Ignore env file with API Keys
 .env
-Procfile
