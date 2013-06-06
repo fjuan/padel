@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'haml-rails'
 gem 'best_in_place'
@@ -27,7 +28,6 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem "twitter-bootstrap-rails"
 
   gem 'uglifier', '>= 1.0.3'
 end
