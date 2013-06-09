@@ -31,8 +31,8 @@
               %ul.nav.pull-right
                 %li= link_to t('devise.links.sign_out'), destroy_user_session_path, :method => :delete
               %ul.nav
-                %li= link_to "My account", my_account_path
-                %li= link_to "Calendar", calendar_path
+                %li= link_to t('my_account'), my_account_path
+                %li= link_to t('calendar'), calendar_path
 
     .container-fluid
 

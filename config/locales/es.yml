@@ -1,0 +1,55 @@
+es:
+  # Forms
+  save: "Guardar"
+  cancel: "Cancelar"
+
+  # Navigation
+  my_account: "Mi cuenta"
+  calendar: "Calendario"
+
+  my_week: "Mi semana"
+  monday: "Lunes"
+  tuesday: "Martes"
+  wednesday: "Miércoles"
+  thursday: "Jueves"
+  friday: "Viernes"
+  saturday: "Sábado"
+  sunday: "Domingo"
+
+  week_explanation: "Señala en el siguiente cuadro los días y las horas en las que sueles estar disponible para jugar."
+  notification_explanation: "Cuando alguien cree un partido en esas horas, te llegará un correo para que confirmes si quieres apuntarte."
+  not_available: "No estoy disponible"
+  available: "Avísame cuando se creen partidos"
+
+  # Scaffold
+  helpers:
+    links:
+      back: "Atrás"
+      cancel: "Cancelar"
+      confirm: "¿Estás seguro?"
+      edit: "Editar"
+      new: "Nuevo"
+      destroy: "Borrar"
+    titles:
+      edit: "Editar %{model}"
+      new: "Crear %{model}"
+      new_report: "%{model} - crear informe"
+      new_document: "%{model} - crear documento"
+      
+  # Activerecord
+  activerecord:
+    models:
+      user:
+        one: "Usuario"
+        other: "Usuarios"
+    attributes:
+      user:
+        email: "Email"
+        name: "Nombre"
+        phone: "Teléfono"
+
+
+  will_paginate:
+    previous_label: "&#8592; Anterior"
+    next_label: "Siguiente &#8594;"
+    page_gap: "&hellip;"

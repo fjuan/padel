@@ -1,32 +1,42 @@
 .page-header
-  %h1 My account
+  %h1= t('my_account')
 
 .row
   .span3
-    %b Name:
+    %b= "#{User.human_attribute_name(:name)}:"
     = best_in_place @user, :name,  input: :input, ok_button: t('save'), cancel_button: t('cancel')
   .span3
-    %b Phone:
+    %b= "#{User.human_attribute_name(:phone)}:"
     = best_in_place @user, :phone, input: :input, ok_button: t('save'), cancel_button: t('cancel')
   .span3
-    %b Email:
+    %b= "#{User.human_attribute_name(:email)}:"
     = @user.email
 
 .page-header
-  %h2 My week
+  %h2= t('my_week')
+
+
+%p= t('week_explanation')
+%p= t('notification_explanation')
 
 .row
   .span9
-
     %table.table.table-striped
       %thead
         %tr
           %td &nbsp;
           - @weekdays.each do |day|
-            %th= day
+            %th= t(day)
       %tbody
         - (10..22).each do |hour|
           %tr
             %th= hour
             - @weekdays.each do |day|
               %td= best_in_place @user, "#{day}_#{hour}".to_sym, type: :checkbox, collection: ['<i class="icon-circle-blank"></i>'.html_safe, '<i class="icon-ok"></i>'.html_safe]
+  .span3.well
+    %p
+      %i.icon-circle-blank
+      = t('not_available')
+    %p
+      %i.icon-ok
+      = t('available')
