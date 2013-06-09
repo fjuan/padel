@@ -21,6 +21,12 @@ es:
   not_available: "No estoy disponible"
   available: "Avísame cuando se creen partidos"
 
+  previous_week: "Semana anterior"
+  this_week: "Esta semana"
+  next_week: "Próxima semana"
+
+  calendar_help: "Pulsa sobre el símbolo + para crear un partido y notificar a los demás usuarios"
+
   # Scaffold
   helpers:
     links:

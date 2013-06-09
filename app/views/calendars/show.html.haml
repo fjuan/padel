@@ -1,28 +1,39 @@
 .page-header
-  %h1 Calendar
+  %h1= t('calendar')
+
+.well
+  %row
+    .span2
+      = link_to t('previous_week'), calendar_path(date: @beginning_of_week - 1.day)
+    .span2.offset3
+      = link_to t('this_week'), calendar_path
+    .span2.offset3
+      = link_to t('next_week'), calendar_path(date: @end_of_week + 1.day)
+
+%p= t('calendar_help')
 
 %table.table.table-striped
   %thead
     %tr
       %td &nbsp;
       - @weekdays.each do |day|
-        %th= day
+        %th= I18n.localize(day, :format => :short)
   %tbody
     - (10..22).each do |hour|
       %tr
         %th= hour
         - @weekdays.each do |day|
           %td
-            - @users_by_availability["#{day}_#{hour}"].each do |user|
+            - @users_by_availability["#{I18n.localize(day, :format => :weekday, :locale => :en).downcase}_#{hour}"].each do |user|
               %i{:class => "icon-user", :title => user.name}
 
-            - if @users_by_availability["#{day}_#{hour}"].count > 0
+            - if @users_by_availability["#{I18n.localize(day, :format => :weekday, :locale => :en).downcase}_#{hour}"].count > 0
               .modal.hide.fade.in{:style => "display: none; ", :id => "#{day}_#{hour}"}
                 .modal-header
                   %a.close{"data-dismiss" => "modal"} ×
                   %h3= "#{day} at #{hour}"
                 .modal-body
-                  %p= @users_by_availability["#{day}_#{hour}"].collect(&:name).to_sentence
+                  %p= @users_by_availability["#{I18n.localize(day, :format => :weekday, :locale => :en).downcase}_#{hour}"].collect(&:name).to_sentence
                 .modal-footer
                   %a.btn.btn-success{:href => "#"} Let's play
                   %a.btn{"data-dismiss" => "modal", :href => "#"} Close

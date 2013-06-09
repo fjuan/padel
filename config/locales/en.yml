@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+  date:
+    formats:
+      default: ! '%e/%m/%Y'
+      long: ! '%e de %B de %Y'
+      short: ! '%e de %b'
+      weekday: ! '%A'

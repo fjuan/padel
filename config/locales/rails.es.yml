@@ -11,18 +11,18 @@ es:
     - sáb
     abbr_month_names:
     - 
-    - Ene
-    - Feb
-    - Mar
-    - Abr
-    - May
-    - Jun
-    - Jul
-    - Ago
-    - Sep
-    - Oct
-    - Nov
-    - Dic
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
     day_names:
     - domingo
     - lunes
@@ -34,8 +34,8 @@ es:
     formats:
       default: ! '%e/%m/%Y'
       long: ! '%e de %B de %Y'
-      short: ! '%e de %b'
-      month_year: ! '%b %y'
+      short: ! '%a %e de %b'
+      weekday: ! '%A'
     month_names:
     - 
     - enero
